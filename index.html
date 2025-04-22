@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificador de Animais</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.7.4/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.4/dist/teachablemachine-image.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Classificador de Animais</h1>
+        <p class="description">Carregue uma imagem para classificar entre as seguintes categorias: Canino, Felino, Equino, Elefantídeo, Galináceo, Bovino ou Caprino.</p>
+        
+        <div class="upload-area" id="upload-area">
+            <input type="file" id="image-upload" accept="image/*" style="display: none;">
+            <label for="image-upload" class="upload-button">
+                <span id="upload-text">Selecione ou arraste uma imagem</span>
+            </label>
+            <div id="image-preview-container" class="image-preview-container">
+                <img id="image-preview" src="#" alt="Pré-visualização da imagem">
+            </div>
+        </div>
+        
+        <button id="predict-button" class="predict-button" disabled>Classificar Imagem</button>
+        
+        <div id="results" class="results-container">
+            <h2>Resultados:</h2>
+            <div id="prediction-results"></div>
+            <div id="confidence-bars"></div>
+        </div>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Carregando modelo...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
